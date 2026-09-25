@@ -4,7 +4,9 @@
   // --- scroll progress + header ---
   const progress = document.getElementById("scroll-progress");
   const header = document.getElementById("header");
-  const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+  const hint = document.querySelector(".scroll-hint");
+  const heroInner = document.querySelector(".hero-inner");
+  const navLinks = [...document.querySelectorAll('nav a[href^="#"]')].filter(a => a.getAttribute("href").length > 1);
   const sections = navLinks.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
   let ticking = false;
   const onScroll = () => {
@@ -12,9 +14,15 @@
     const p = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
     if (progress) progress.style.transform = `scaleX(${p})`;
     if (header) header.classList.toggle("scrolled", h.scrollTop > 12);
+    if (hint) hint.classList.toggle("gone", h.scrollTop > 140);
+    if (!reduce && heroInner && h.scrollTop < innerHeight) {
+      heroInner.style.transform = `translateY(${h.scrollTop * 0.18}px)`;
+      heroInner.style.opacity = String(Math.max(0, 1 - h.scrollTop / (innerHeight * 0.85)));
+    }
     const y = h.scrollTop + 140;
     let cur = "";
     for (const s of sections) if (s.offsetTop <= y) cur = "#" + s.id;
+    if (sections.length && h.scrollTop + h.clientHeight >= h.scrollHeight - 2) cur = "#" + sections[sections.length - 1].id;
     for (const a of navLinks) a.classList.toggle("active", a.getAttribute("href") === cur);
     ticking = false;
   };

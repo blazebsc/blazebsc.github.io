@@ -1,0 +1,239 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header id="header">
+    <nav>
+      <a class="nav-logo" href="#" aria-label="home">blazebsc<span class="logo-dot">.</span></a>
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="https://github.com/blazebsc" target="_blank" rel="noreferrer">github</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <div class="hero-blob blob-1" aria-hidden="true"></div>
+      <div class="hero-blob blob-2" aria-hidden="true"></div>
+      <div class="hero-blob blob-3" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-tag reveal">hey, i'm</p>
+          <h1 class="hero-title reveal" data-delay="1">
+            <span class="title-row">Blake<span class="dot">.</span></span>
+            <span class="title-row outline" aria-hidden="true">Blake.</span>
+          </h1>
+          <p class="hero-sub reveal" data-delay="2" id="hero-sub">i build things</p>
+          <div class="hero-links reveal" data-delay="3">
+            <a href="#projects" class="btn btn-primary magnetic" data-strength="0.35"><span>see my projects</span></a>
+            <a href="#about" class="btn btn-outline magnetic" data-strength="0.25"><span>about me</span></a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="scroll">
+        <span class="mono">scroll</span>
+        <span class="scroll-hint-line"><span></span></span>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div class="section-label mono"><span class="label-num">01</span> about</div>
+          <h2>who am i<span class="h2-dot">?</span></h2>
+          <p class="section-desc">student from NZ who'd rather be in a terminal than a lecture hall.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">i'm <strong>Blake</strong>, aka <strong>blazebsc</strong>, a student from NZ who loves tinkering with code and building things.</p>
+            <p>when i'm not coding i'm probably messing with servers, breaking things, and figuring out how to fix them or break them more.</p>
+            <div class="about-actions">
+              <a href="https://github.com/blazebsc" target="_blank" class="text-link mono">github.com/blazebsc ↗</a>
+              <span class="mono c-muted">·</span>
+              <a href="https://blake7.eu.org" target="_blank" class="text-link mono">blake7.eu.org ↗</a>
+            </div>
+          </div>
+
+          <div class="about-cards">
+            <div class="stat-card reveal" data-delay="1">
+              <span class="stat-icon">🌏</span>
+              <span class="stat-label">New Zealand</span>
+            </div>
+            <div class="stat-card reveal" data-delay="2">
+              <span class="stat-icon">🧑🏻‍💻</span>
+              <span class="stat-label">GitHub</span>
+            </div>
+            <div class="stat-card reveal" data-delay="3">
+              <span class="stat-icon">💻</span>
+              <span class="stat-label">HTML & CSS</span>
+            </div>
+            <div class="stat-card reveal" data-delay="4">
+              <span class="stat-icon">🚀</span>
+              <span class="stat-label">AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div class="section-label mono"><span class="label-num">02</span> skills</div>
+          <h2>what i work with</h2>
+          <p class="section-desc">stack mapped from 16 repos, personal plus the <a href="https://github.com/port2wear" target="_blank" class="text-link mono">port2wear</a> org. no buzzword bingo.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal" data-delay="1">
+            <h3 class="mono">languages</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">Kotlin</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+            </div>
+            <p class="skill-note mono">Create-UfoPort Java 2★, New-Zealand-Natives-Mod Java port, WearOS 22k Kotlin / WearPipe 2.6M Java</p>
+          </div>
+
+          <div class="skill-group reveal" data-delay="2">
+            <h3 class="mono">platforms & tools</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Wear OS</span>
+              <span class="skill-pill">Minecraft</span>
+              <span class="skill-pill">Fabric</span>
+              <span class="skill-pill">Electron</span>
+              <span class="skill-pill">GitHub Pages</span>
+              <span class="skill-pill">Cloudflare</span>
+            </div>
+            <p class="skill-note mono">port2wear/WearTube & WearPipe, Create (Fabric) + NZ natives (Forge/Fabric)</p>
+          </div>
+
+          <div class="skill-group reveal" data-delay="3">
+            <h3 class="mono">focus</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Web</span>
+              <span class="skill-pill">Mobile</span>
+              <span class="skill-pill">Game mods</span>
+              <span class="skill-pill">Open source</span>
+            </div>
+            <p class="skill-note mono">portfolio, WearOS ecosystem, Minecraft mods (Create + NZ natives)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div class="section-label mono"><span class="label-num">03</span> projects</div>
+          <h2>things i've made</h2>
+          <p class="section-desc">picked from GitHub. personal and org work, all on github.com/blazebsc</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured reveal" data-delay="1">
+            <div class="project-body">
+              <div class="project-header">
+                <span class="project-tag mono">WEB · LIVE</span>
+                <span class="project-year mono">2025</span>
+              </div>
+              <h3>this portfolio</h3>
+              <p>my portfolio on Cloudflare Pages. plain HTML and CSS plus some JavaScript. no framework cults here :D</p>
+              <div class="project-footer">
+                <span class="tech-pill mono">HTML</span>
+                <span class="tech-pill mono">CSS</span>
+                <span class="tech-pill mono">Cloudflare Pages</span>
+              </div>
+            </div>
+            <a href="https://github.com/blazebsc/blazebsc.github.io" target="_blank" class="card-hover mono">code →</a>
+          </article>
+
+          <article class="project-card reveal" data-delay="2">
+            <div class="project-body">
+              <div class="project-header">
+                <span class="project-tag mono">MOBILE · KOTLIN</span>
+                <span class="project-year mono">2025</span>
+              </div>
+              <h3>WearOS-Stopwatch</h3>
+              <p>Wear OS stopwatch in Kotlin. Plus org work at port2wear, WearTube and WearPipe (Kotlin/Java) for Wear OS.</p>
+              <div class="project-footer">
+                <span class="tech-pill mono">Kotlin</span>
+                <span class="tech-pill mono">Wear OS</span>
+                <span class="tech-pill mono">port2wear</span>
+              </div>
+            </div>
+            <a href="https://github.com/blazebsc/WearOS-Stopwatch" target="_blank" class="card-hover mono">code →</a>
+          </article>
+
+          <article class="project-card reveal" data-delay="2">
+            <div class="project-body">
+              <div class="project-header">
+                <span class="project-tag mono">FORK JAVA EDITION</span>
+                <span class="project-year mono">2025</span>
+              </div>
+              <h3>New-Zealand-Natives-Mod</h3>
+              <p>A Bedrock addon I ported to a Java Edition Minecraft mod. It adds NZ natives like kiwi and kea. 1 star, runs on Fabric and Forge.</p>
+              <div class="project-footer">
+                <span class="tech-pill mono">Java</span>
+                <span class="tech-pill mono">Minecraft</span>
+                <span class="tech-pill mono">Fork • Port</span>
+              </div>
+            </div>
+            <a href="https://github.com/blazebsc/New-Zealand-Natives-Mod" target="_blank" class="card-hover mono">code →</a>
+          </article>
+
+          <article class="project-card reveal" data-delay="3">
+            <div class="project-body">
+              <div class="project-header">
+                <span class="project-tag mono">FORK · MAINTAINED</span>
+                <span class="project-year mono">2026</span>
+              </div>
+              <h3>Create-UfoPort</h3>
+              <p>I forked and maintain this unofficial port of Create for Fabric 1.21. Java, 2 stars. It keeps Create features alive on Fabric.</p>
+              <div class="project-footer">
+                <span class="tech-pill mono">Java</span>
+                <span class="tech-pill mono">Minecraft</span>
+                <span class="tech-pill mono">Fabric</span>
+              </div>
+            </div>
+            <a href="https://github.com/blazebsc/Create-UfoPort" target="_blank" class="card-hover mono">code →</a>
+          </article>
+
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal">
+    <div class="footer-inner">
+      <div class="footer-big">blazebsc</div>
+      <div class="footer-bottom">
+        <p class="mono">© 2025 made by <strong>Blake</strong> crafted in NZ</p>
+        <div class="footer-links mono">
+          <a href="https://blake7.eu.org" target="_blank">blake7.eu.org</a>
+          <span>·</span>
+          <a href="https://github.com/blazebsc" target="_blank">github</a>
+          <span>·</span>
+          <a href="#top">back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

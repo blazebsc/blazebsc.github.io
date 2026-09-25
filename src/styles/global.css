@@ -318,3 +318,55 @@ nav ul a:hover::after, nav ul a.active::after{ transform:scaleX(1); }
   .hero-links{ flex-direction:column; }
   .hero-links .btn{ width:100%; }
 }
+
+/* ---- motion+ layer (animations only, design unchanged) --- */
+section[id]{ scroll-margin-top:72px; }
+a:focus-visible{ outline:2px solid var(--yellow); outline-offset:3px; border-radius:4px; }
+
+/* animated film grain */
+.grain{ animation:grainShift 0.9s steps(3) infinite; }
+@keyframes grainShift{
+  0%{ transform:translate(0,0); }
+  33%{ transform:translate(-18px,10px); }
+  66%{ transform:translate(12px,-14px); }
+  100%{ transform:translate(0,0); }
+}
+
+/* headline underline draws itself in on reveal */
+.section-head h2{
+  padding-bottom:0.08em;
+  background:linear-gradient(var(--yellow),var(--yellow)) left bottom / 0% 0.1em no-repeat;
+  transition:background-size 0.9s var(--ease) 0.35s;
+}
+.section-head.is-visible h2{ background-size:100% 0.1em; }
+
+/* primary button shine sweep */
+.btn-primary{ overflow:hidden; }
+.btn-primary::before{
+  content:""; position:absolute; top:0; bottom:0; width:40%; left:-60%; z-index:0;
+  background:linear-gradient(105deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform:skewX(-20deg); transition:left 0.6s var(--ease);
+}
+.btn-primary:hover::before{ left:130%; }
+
+/* featured card glow pulse (pauses on hover so hover lift wins) */
+.project-card.featured{ animation:featGlow 3.2s ease-in-out infinite; }
+.project-card.featured:hover{ animation-play-state:paused; }
+@keyframes featGlow{
+  0%,100%{ box-shadow:0 0 0 rgba(255,217,61,0); }
+  50%{ box-shadow:0 0 32px rgba(255,217,61,0.28); }
+}
+
+/* stat icon lights up on card hover */
+.stat-icon{ transition:filter 0.3s var(--ease); }
+.stat-card:hover .stat-icon{ filter:saturate(1.9) drop-shadow(0 4px 10px rgba(255,217,61,0.4)); }
+
+/* scroll hint bows out once you scroll */
+.scroll-hint.gone{ opacity:0; transform:translate(-50%,10px); pointer-events:none; }
+
+/* footer title sheen on hover */
+.footer-big{
+  background:linear-gradient(100deg, var(--yellow) 30%, #fff0a8 50%, var(--yellow) 70%);
+  background-size:200% auto; transition:background-position 0.8s var(--ease);
+}
+.footer-big:hover{ background-position:right center; }
